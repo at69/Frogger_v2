@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page not found</title>
+		<style>
+			#notfound {	
+				position: absolute;
+				margin-left: -325px;
+				left: 50%;
+				margin-top: -225px;
+				top: 50%;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+				
+			<div id="header">
+				<ul id="menu">
+				<% 	if(froggerUser == "") {  %>
+					<li><a href="/register">Register</a></li>
+					<li><a href="/login">Login</a></li>
+				<% } else { %>
+					<li><a href="/logout">Logout</a></li>
+					<li><a href="/play">Play</a></li>
+					<% if(froggerUser[0].isAdmin == 1) { %>
+						<li><a href="/administration">Statistics</a></li>
+					<% } %>
+				<% } %>
+			</ul>
+			</div>
+			<div id="notfound">
+				<img src="img/404.png" alt="Page not found image"/>
+			</div>
+		</div>
+	</body>
+</html>

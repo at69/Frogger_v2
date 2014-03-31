@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
+		<div id="content">
+				
+			<div id="header">
+				<ul id="menu">
+					<% if(froggerUser == "") { 	%>
+						<li><a href="/register">Register</a></li>
+						<li><a href="/login">Login</a></li>
+					<% } else { %>
+						<li><a href="/logout">Logout</a></li>
+						<li><a href="/play">Play</a></li>
+						<% if(froggerUser[0].isAdmin == 1) { %>
+							<li><a href="/administration">Statistics</a></li>
+						<% } %>
+					<% } %>
+				</ul>
+				<h1>Login</h1
+			</div>
+					
+			<div id="loginForm">
+				<form action="login" method="POST">
+					<fieldset style="width: 300px">
+						<legend>Enter your credentials</legend>
+							<table>
+								<tr>
+									<td><label for="mail" id="mailLabel">E-mail:   </label></td>
+									<td><input type="email" name="mail"/> <br/></td>
+								</tr>
+								<tr>
+									<td><label for="pass" id="passLabel">Password:   </label></td>
+									<td><input type="password" name="pass"/> <br/></td>
+								</tr>
+								<tr>
+									<td><input type="submit" value="Login"/></td>
+								</tr>
+							</table>
+					</fieldset>
+				</form>
+			</div>
+			<br/>
+			<div id="msg"><%= msg %></div>
+		</div>
+	</body>
+</html>
